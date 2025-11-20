@@ -23,14 +23,11 @@
 import { NextResponse } from 'next/server'
 import { initializeClient } from '@/lib/bot/whatsapp-client'
 
-export async function DELETE(
-	request: Request,
-	context: { params: { id: string } }
-) {
+export async function DELETE(request: Request, { params }: any) {
 	try {
 		const bot = await initializeClient()
-		const id = Number(context.params.id)
 
+		const id = Number(params.id)
 		const deleted = bot.cancelReminder(id)
 
 		if (!deleted) {
