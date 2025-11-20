@@ -1,0 +1,35 @@
+{
+	"name": "botty-assistant-next-app",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "concurrently \"npm run dev:next\" \"npm run dev:bot\"",
+		"dev:next": "next dev --turbo",
+		"dev:bot": "ts-node lib/bot/whatsapp-client.ts",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint"
+	},
+	"dependencies": {
+		"next": "15.4.5",
+		"node-schedule": "^2.1.1",
+		"puppeteer": "^24.28.0",
+		"puppeteer-core": "^24.29.1",
+		"qrcode": "^1.5.3",
+		"react": "19.1.0",
+		"react-dom": "19.1.0",
+		"rimraf": "^6.1.0",
+		"whatsapp-web.js": "^1.25.0"
+	},
+	"devDependencies": {
+		"@tailwindcss/postcss": "^4",
+		"@types/node": "^20",
+		"@types/node-schedule": "^2.1.5",
+		"@types/qrcode": "^1.5.5",
+		"@types/react": "^19",
+		"@types/react-dom": "^19",
+		"concurrently": "^9.2.1",
+		"tailwindcss": "^4",
+		"typescript": "^5"
+	}
+}
